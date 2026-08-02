@@ -1,0 +1,2408 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🔥 Alpha Flame V0.8.1</title>
+
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+background:#050a14;
+color:white;
+font-family:Arial,sans-serif;
+}
+
+
+.container{
+display:flex;
+min-height:100vh;
+}
+
+
+.sidebar{
+width:250px;
+padding:25px;
+background:#0f172a;
+}
+
+
+.logo{
+
+margin-bottom:60px;
+
+text-align:center;
+
+}
+
+
+.logo img{
+
+width:170px;
+
+}
+
+.menu div{
+
+padding:20px;
+
+margin-bottom:12px;
+
+background:#111827;
+
+border-radius:14px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+border:1px solid transparent;
+
+}
+
+
+.menu div:hover{
+
+background:#182235;
+
+border:1px solid #ff8a00;
+
+transform:translateX(5px);
+
+}
+
+.menu div:hover{
+background:#ff8a00;
+}
+
+
+
+.main{
+flex:1;
+padding:30px;
+}
+
+
+.title{
+font-size:36px;
+font-weight:bold;
+margin-bottom:25px;
+}
+
+
+.panel{
+background:#111827;
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+
+
+.hidden{
+display:none;
+}
+
+
+.orange{
+color:#ff8a00;
+}
+
+
+.green{
+color:#32d583;
+}
+
+
+
+.hot-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:15px;
+}
+
+
+
+.stock-card{
+background:#182235;
+padding:18px;
+border-radius:18px;
+cursor:pointer;
+}
+
+
+
+.stock-card:hover{
+border:1px solid #ff8a00;
+}
+
+
+.stock-title{
+font-size:22px;
+font-weight:bold;
+}
+
+
+.star{
+float:right;
+cursor:pointer;
+font-size:22px;
+}
+
+
+.price{
+font-size:28px;
+font-weight:bold;
+margin:15px 0;
+}
+
+
+
+.row{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+padding:12px;
+border-bottom:1px solid #333;
+}
+
+
+
+.analysis-grid{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:20px;
+}
+
+
+
+.chart{
+height:300px;
+background:#182235;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+}
+
+
+
+.candle{
+width:15px;
+border-radius:5px;
+}
+
+
+.green-candle{
+height:150px;
+background:#32d583;
+}
+
+
+.red-candle{
+height:90px;
+background:#ef4444;
+}
+
+
+
+.stat{
+padding:12px;
+border-bottom:1px solid #333;
+}
+
+
+textarea{
+width:100%;
+height:120px;
+background:#182235;
+color:white;
+border-radius:10px;
+padding:10px;
+}
+#splash{
+
+position:fixed;
+inset:0;
+
+background:#050a14;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+z-index:99999;
+
+}
+
+
+
+.green-flash{
+animation: greenPulse 0.5s;
+}
+
+
+.red-flash{
+animation: redPulse 0.5s;
+}
+.red-text{
+color:#ef4444;
+}
+.stock-up{
+
+animation: cardUp 0.5s;
+
+}
+
+
+.stock-down{
+
+animation: cardDown 0.5s;
+
+}
+
+
+
+@keyframes cardUp{
+
+50%{
+
+box-shadow:0 0 20px #32d583;
+
+}
+
+}
+
+
+
+@keyframes cardDown{
+
+50%{
+
+box-shadow:0 0 20px #ef4444;
+
+}
+
+}
+
+
+@keyframes greenPulse{
+
+50%{
+transform:translateY(-5px);
+opacity:0.7;
+}
+
+}
+
+
+@keyframes redPulse{
+
+50%{
+transform:translateY(5px);
+opacity:0.7;
+}
+
+}
+
+
+@keyframes logoShow{
+
+0%{
+
+opacity:0;
+transform:scale(0.8);
+
+}
+
+100%{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
+#splash{
+
+position:fixed;
+inset:0;
+
+background:#050a14;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+z-index:99999;
+
+}
+
+
+
+
+#splash{
+
+position:fixed;
+
+inset:0;
+
+background:#050a14;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:99999;
+
+}
+
+
+/* ANA LOGO */
+
+
+
+
+/* BB İMZA */
+
+#splash{
+
+position:fixed;
+inset:0;
+
+background:#050a14;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+z-index:99999;
+
+}
+
+
+
+
+
+.main-logo{
+
+animation: alphaEnter 1.5s ease-out;
+
+}
+
+
+.bb-logo{
+
+animation: bbEnter 1.8s ease-out;
+
+}
+
+.main-logo{
+
+width:1100px;
+max-width:90%;
+
+animation:alphaEnter 2s cubic-bezier(.16,1,.3,1);
+
+}
+
+.bb-logo{
+
+position:fixed;
+
+width:250px;
+
+left:1px;
+
+bottom:5px;
+
+z-index:100000;
+
+animation:bbEnter 2s cubic-bezier(.16,1,.3,1);
+
+}
+@keyframes alphaEnter{
+
+0%{
+
+opacity:0;
+
+transform:scale(0.6) translateY(40px);
+
+}
+
+
+100%{
+
+opacity:1;
+
+transform:scale(1) translateY(-40px);
+
+}
+
+}
+
+
+@keyframes bbEnter{
+
+0%{
+
+opacity:0;
+
+transform:translateX(-200px);
+
+}
+
+
+70%{
+
+opacity:1;
+
+transform:translateX(10px);
+
+}
+
+
+100%{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+.star-line{
+
+position:absolute;
+
+width:0;
+
+height:3px;
+
+background:#ffb000;
+
+bottom:35%;
+
+left:50%;
+
+transform:translateX(-50%);
+
+box-shadow:
+0 0 10px #ffb000,
+0 0 30px #ff8a00;
+
+animation:starLine 1.5s ease forwards;
+
+}
+
+
+@keyframes starLine{
+
+0%{
+
+width:0;
+opacity:0;
+
+}
+
+
+40%{
+
+width:500px;
+opacity:1;
+
+}
+
+
+100%{
+
+width:900px;
+opacity:0;
+
+}
+
+}
+.start-screen{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:40px;
+
+}
+
+
+#startBtn{
+
+padding:15px 50px;
+
+font-size:20px;
+
+font-weight:bold;
+
+background:#ff8a00;
+
+color:white;
+
+border:none;
+
+border-radius:30px;
+
+cursor:pointer;
+
+box-shadow:0 0 25px #ff8a00;
+
+}
+
+
+#startBtn:hover{
+
+transform:scale(1.05);
+
+}
+.container{
+
+animation:dashboardEnter 0.8s ease;
+
+}
+
+
+@keyframes dashboardEnter{
+
+0%{
+
+opacity:0;
+
+transform:scale(1.03);
+
+}
+
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+.hot-score{
+
+color:#ff8a00;
+
+font-weight:bold;
+
+margin-top:15px;
+
+}
+
+
+.hot-bar{
+
+height:8px;
+
+background:#273244;
+
+border-radius:10px;
+
+overflow:hidden;
+
+margin-top:8px;
+
+}
+
+
+.hot-fill{
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+#ff8a00,
+#ffd700,
+#ff4500
+);
+
+border-radius:10px;
+
+box-shadow:
+0 0 10px #ff8a00;
+
+animation:hotGlow 1.5s infinite alternate;
+
+}
+
+
+@keyframes hotGlow{
+
+from{
+
+box-shadow:
+0 0 5px #ff8a00;
+
+}
+
+
+to{
+
+box-shadow:
+0 0 20px #ff4500;
+
+}
+
+}
+.hot-title{
+
+font-size:14px;
+
+color:#ff8a00;
+
+}
+
+
+.hot-number{
+
+font-size:36px;
+
+font-weight:bold;
+
+margin:5px 0;
+
+color:#ffd700;
+
+text-shadow:
+0 0 10px #ff8a00;
+
+animation:scorePop 1.5s ease;
+
+}
+
+
+@keyframes scorePop{
+
+0%{
+
+transform:scale(0.5);
+
+opacity:0;
+
+}
+
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+.menu-item{
+
+position:relative;
+
+padding:15px;
+
+margin-bottom:12px;
+
+background:#111827;
+
+border-radius:14px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+
+.menu-item.active{
+
+background:#182235;
+
+border-left:4px solid #ff8a00;
+
+box-shadow:0 0 15px rgba(255,138,0,0.25);
+
+}
+
+
+.menu-item:hover{
+
+transform:translateX(5px);
+
+}
+.ai-status{
+
+margin-top:50px;
+
+padding:15px;
+
+background:#111827;
+
+border-radius:15px;
+
+border:1px solid #1f2937;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:13px;
+
+}
+
+
+.status-dot{
+
+width:10px;
+
+height:10px;
+
+background:#32d583;
+
+border-radius:50%;
+
+box-shadow:
+0 0 10px #32d583;
+
+animation:pulseDot 1.5s infinite;
+
+}
+
+
+.ai-status span{
+
+color:#9ca3af;
+
+font-size:12px;
+
+}
+
+
+
+@keyframes pulseDot{
+
+50%{
+
+opacity:0.4;
+
+transform:scale(1.4);
+
+}
+
+}
+.ai-analysis{
+
+border:1px solid #263247;
+
+}
+
+
+.ai-analysis h3{
+
+color:#ff8a00;
+
+}
+
+
+.ai-analysis p{
+
+line-height:1.7;
+
+color:#d1d5db;
+
+}
+
+
+.ai-tags{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-top:20px;
+
+}
+
+
+.ai-tags span{
+
+background:#182235;
+
+padding:8px 12px;
+
+border-radius:20px;
+
+font-size:13px;
+
+border:1px solid #273244;
+
+}
+.chart-container{
+
+height:300px;
+
+background:#182235;
+
+border-radius:20px;
+
+padding:15px;
+
+}
+
+
+#stockChart{
+
+width:100%;
+
+height:100%;
+
+}
+</style>
+
+</head>
+<body>
+<div id="splash">
+
+<div class="start-screen">
+
+<img class="main-logo" src="assets/alpha-flame-logo.png">
+
+<button id="startBtn">
+BAŞLAT
+</button>
+
+</div>
+
+
+<div class="star-line"></div>
+
+<img class="bb-logo" src="assets/bb-invest.png">
+
+</div>
+<div class="container">
+
+
+<aside class="sidebar">
+
+
+
+<div class="logo">
+
+<img src="assets/alpha-flame-logo.png">
+
+</div>
+
+<div class="menu">
+
+
+<div class="menu-item active" onclick="showPage('dashboard',this)">
+
+🏠 Dashboard
+
+</div>
+
+
+<div class="menu-item" onclick="showPage('favorites',this)">
+
+⭐ Favoriler
+
+</div>
+
+
+<div class="menu-item" onclick="showPage('search',this)">
+
+🔎 Arama
+
+</div>
+
+<div>
+
+🔥 Hot List
+
+</div>
+
+
+<div>
+
+📊 Sektörler
+
+</div>
+
+
+<div>
+
+⚙️ Ayarlar
+
+</div>
+<div class="ai-status">
+
+<div class="status-dot"></div>
+
+<div>
+
+<b>AI ENGINE ONLINE</b>
+
+<br>
+
+<span>Live Market Data</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</aside>
+
+
+
+
+
+<main class="main">
+
+
+
+<div id="dashboard">
+
+
+<div class="title">
+
+Dashboard
+
+</div>
+
+
+
+<div class="panel">
+
+
+<h2>
+
+⭐ Favoriler
+
+</h2>
+
+
+<div class="row orange">
+
+HİSSE
+
+FİYAT
+
+HOT SCORE
+
+GÜNLÜK
+
+</div>
+
+
+<div id="favoritePreview"></div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="panel">
+
+
+<h2>
+
+🔥 HOT LIST
+
+</h2>
+
+
+<div class="hot-grid" id="hotList"></div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="favorites" class="hidden">
+
+
+<div class="title">
+
+⭐ Favoriler
+
+</div>
+
+
+<div class="panel">
+
+<div id="favoriteList"></div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="search" class="hidden">
+
+
+<div class="title">
+
+🔎 Hisse Ara
+
+</div>
+
+
+<div class="panel">
+
+
+<input id="searchBox"
+
+style="
+width:100%;
+padding:15px;
+background:#182235;
+color:white;
+border-radius:12px;
+border:none;
+"
+
+placeholder="Hisse ara..."
+
+onkeyup="searchStock()">
+
+
+
+<div id="searchResult"></div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="analysis" class="hidden">
+
+
+<div onclick="showPage('dashboard')"
+
+class="orange"
+
+style="cursor:pointer">
+
+← Geri
+
+</div>
+
+
+
+
+
+<div class="analysis-grid">
+
+
+
+<div>
+
+
+
+<div class="panel">
+
+
+<h1 id="symbol">
+
+🔥 NVDA
+
+</h1>
+
+
+<p id="company">
+
+NVIDIA
+
+</p>
+
+
+<div class="price" id="detailPrice">
+
+182.45$
+
+</div>
+
+
+<div class="green" id="detailChange">
+
+▲ +2.81%
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="panel">
+
+
+<h2>
+
+📊 Grafik
+
+</h2>
+
+
+<div class="chart-container">
+
+<canvas id="stockChart"></canvas>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="panel">
+
+
+<h2>
+
+📝 Not
+
+</h2>
+
+
+<textarea placeholder="Hisse notu..."></textarea>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+<div class="panel">
+
+
+<h3>
+
+⏱ Son Güncelleme
+
+</h3>
+
+
+<h2 id="updateTime">
+
+-
+
+</h2>
+
+
+</div>
+
+
+
+
+
+<div class="panel">
+
+
+<h3>
+
+🔥 HOT SCORE
+
+</h3>
+
+
+<h1 id="detailScore">
+
+92
+
+</h1>
+
+
+<div class="stat">
+
+📈 Momentum:
+<span id="momentumScore">-</span>
+
+</div>
+
+
+<div class="stat">
+
+📊 Hacim:
+<span id="volumeScore">-</span>
+
+</div>
+
+
+<div class="stat">
+
+📉 Trend:
+<span id="trendScore">-</span>
+
+</div>
+
+
+<div class="stat">
+
+📰 Haber:
+<span id="newsScore">-</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="panel">
+
+
+<h3>
+
+📌 Detay Bilgileri
+
+</h3>
+
+
+<div class="stat">
+
+🏭 Sektör:
+<span id="detailSector">-</span>
+
+</div>
+
+
+<div class="stat">
+
+📊 Hacim:
+<span id="detailVolume">-</span>
+
+</div>
+
+
+<div class="stat">
+
+🌎 Piyasa:
+<span id="detailMarket">-</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="panel ai-analysis">
+
+
+<h3>
+
+🧠 AI ANALİZ
+
+</h3>
+
+
+<p id="detailReason">
+
+-
+
+</p>
+
+
+<div class="ai-tags">
+
+
+<span>🟢 Momentum Güçlü</span>
+
+<span>🟢 Hacim Desteği</span>
+
+<span>🟡 Risk Takibi</span>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</main>
+
+
+</div>
+<script>
+
+
+const stocks = {
+
+NVDA:{
+name:"NVIDIA Corporation",
+market:"🇺🇸 USA",
+price:"182.45$",
+change:"+2.81%",
+score:92,
+momentum:"28/30",
+volumeScore:"24/25",
+trend:"22/25",
+news:"18/20",
+sector:"Semiconductor",
+volume:"45.2M",
+reason:"Yapay zeka çip talebi ve güçlü büyüme beklentisi"
+},
+
+
+PLTR:{
+name:"Palantir Technologies",
+market:"🇺🇸 USA",
+price:"74.20$",
+change:"+4.15%",
+score:89,
+momentum:"27/30",
+volumeScore:"23/25",
+trend:"21/25",
+news:"18/20",
+sector:"Software",
+volume:"52M",
+reason:"Yapay zeka platform büyümesi"
+},
+
+
+AMD:{
+name:"Advanced Micro Devices",
+market:"🇺🇸 USA",
+price:"164.80$",
+change:"+1.92%",
+score:87,
+momentum:"26/30",
+volumeScore:"22/25",
+trend:"21/25",
+news:"18/20",
+sector:"Semiconductor",
+volume:"38M",
+reason:"Çip sektörü büyümesi"
+},
+
+
+CRWD:{
+name:"CrowdStrike",
+market:"🇺🇸 USA",
+price:"391.50$",
+change:"+2.30%",
+score:85,
+momentum:"25/30",
+volumeScore:"22/25",
+trend:"21/25",
+news:"17/20",
+sector:"Cyber Security",
+volume:"25M",
+reason:"Siber güvenlik talebi"
+},
+
+
+AVGO:{
+name:"Broadcom",
+market:"🇺🇸 USA",
+price:"312.10$",
+change:"+1.65%",
+score:83,
+momentum:"24/30",
+volumeScore:"21/25",
+trend:"21/25",
+news:"17/20",
+sector:"Semiconductor",
+volume:"18M",
+reason:"AI altyapı yatırımları"
+},
+
+
+META:{
+name:"Meta Platforms",
+market:"🇺🇸 USA",
+price:"512.20$",
+change:"+1.80%",
+score:81,
+momentum:"24/30",
+volumeScore:"20/25",
+trend:"20/25",
+news:"17/20",
+sector:"Technology",
+volume:"20M",
+reason:"AI ve reklam büyümesi"
+},
+
+
+TSLA:{
+name:"Tesla",
+market:"🇺🇸 USA",
+price:"245.30$",
+change:"+2.10%",
+score:80,
+momentum:"23/30",
+volumeScore:"20/25",
+trend:"20/25",
+news:"17/20",
+sector:"Automotive",
+volume:"40M",
+reason:"Elektrikli araç büyümesi"
+},
+
+
+MSFT:{
+name:"Microsoft",
+market:"🇺🇸 USA",
+price:"455.70$",
+change:"+1.40%",
+score:79,
+momentum:"23/30",
+volumeScore:"19/25",
+trend:"20/25",
+news:"17/20",
+sector:"Software",
+volume:"15M",
+reason:"Cloud ve AI yatırımları"
+},
+
+
+AMZN:{
+name:"Amazon",
+market:"🇺🇸 USA",
+price:"230.50$",
+change:"+1.20%",
+score:78,
+momentum:"22/30",
+volumeScore:"19/25",
+trend:"20/25",
+news:"17/20",
+sector:"E-Commerce",
+volume:"22M",
+reason:"Bulut ve ticaret büyümesi"
+},
+
+
+GOOGL:{
+name:"Alphabet",
+market:"🇺🇸 USA",
+price:"185.40$",
+change:"+1.10%",
+score:77,
+momentum:"22/30",
+volumeScore:"18/25",
+trend:"20/25",
+news:"17/20",
+sector:"Technology",
+volume:"17M",
+reason:"AI ve arama teknolojileri"
+}
+
+};
+
+Object.keys(stocks).forEach(symbol=>{
+
+let price = Number(
+String(stocks[symbol].price)
+.replace("$","")
+.replace(",","")
+);
+
+
+if(isNaN(price) || price<=0){
+
+price = 100;
+
+}
+
+
+stocks[symbol].chart=[];
+
+
+let last = price;
+
+
+for(let i=0;i<30;i++){
+
+let open = last;
+
+let change = (Math.random()-0.5)*10;
+
+let close = open + change;
+
+
+let high =
+Math.max(open,close)
++ Math.random()*5;
+
+
+let low =
+Math.min(open,close)
+- Math.random()*5;
+
+
+stocks[symbol].chart.push({
+
+open,
+high,
+low,
+close
+
+});
+
+
+last = close;
+
+}
+
+
+});
+
+
+
+let favorites =
+JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+
+function showPage(page,element){
+
+document.querySelectorAll(".main > div")
+.forEach(x=>x.classList.add("hidden"));
+
+document.getElementById(page)
+.classList.remove("hidden");
+
+
+document.querySelectorAll(".menu-item")
+.forEach(x=>x.classList.remove("active"));
+
+
+if(element){
+
+element.classList.add("active");
+
+}
+
+}
+
+
+
+function renderHotList(){
+
+let area=document.getElementById("hotList");
+
+area.innerHTML="";
+
+
+Object.keys(stocks).forEach(symbol=>{
+
+let s=stocks[symbol];
+
+
+area.innerHTML += `
+
+<div class="stock-card"
+onclick="openStock('${symbol}')">
+
+
+<div class="stock-title">
+
+🔥 ${symbol}
+
+<span class="star"
+onclick="event.stopPropagation();toggleFavorite('${symbol}')">
+
+${favorites.includes(symbol) ? "⭐":"☆"}
+
+</span>
+
+</div>
+
+
+<p>${s.name}</p>
+
+
+<div class="price">
+
+${s.price}
+
+</div>
+
+
+<div>
+
+${changeStyle(s.change)}
+
+</div>
+
+<div class="hot-score">
+
+<div class="hot-title">
+🔥 HOT SCORE
+</div>
+
+<div class="hot-number">
+${s.score}
+</div>
+
+<div class="hot-bar">
+
+<div class="hot-fill"
+style="width:${s.score}%">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+
+}
+
+function changeStyle(value){
+
+let num = parseFloat(value);
+
+if(num >= 0){
+
+return `
+<span class="green green-flash">
+▲ ${value}
+</span>
+`;
+
+}else{
+
+return `
+<span class="red-flash" style="color:#ef4444">
+▼ ${value}
+</span>
+`;
+}
+
+}
+
+function toggleFavorite(symbol){
+
+if(favorites.includes(symbol)){
+
+favorites=favorites.filter(x=>x!==symbol);
+
+}else{
+
+favorites.push(symbol);
+
+}
+
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+let cards = document.querySelectorAll(".stock-card");
+
+
+cards.forEach(card=>{
+
+card.classList.remove("stock-up");
+card.classList.remove("stock-down");
+
+
+});
+renderHotList();
+renderFavorites();
+
+}
+
+
+
+function renderFavorites(){
+
+let list=document.getElementById("favoriteList");
+let preview=document.getElementById("favoritePreview");
+
+
+list.innerHTML="";
+preview.innerHTML="";
+
+
+favorites.forEach(symbol=>{
+
+let s=stocks[symbol];
+
+
+let html=`
+
+<div class="row"
+onclick="openStock('${symbol}')">
+
+<div>
+${symbol}
+</div>
+
+<div>
+${s.price}
+</div>
+
+<div>
+🔥 ${s.score}
+</div>
+
+<div class="${parseFloat(s.change) >= 0 ? 'green' : 'red-text'}">
+${s.change}
+</div>
+
+</div>
+
+`;
+
+list.innerHTML+=html;
+preview.innerHTML+=html;
+
+
+});
+
+
+}
+
+
+
+function searchStock(){
+
+let q=document
+.getElementById("searchBox")
+.value
+.toUpperCase();
+
+
+let result=document.getElementById("searchResult");
+
+result.innerHTML="";
+
+
+Object.keys(stocks).forEach(symbol=>{
+
+
+let s=stocks[symbol];
+
+
+if(symbol.includes(q) ||
+s.name.toUpperCase().includes(q)){
+
+
+result.innerHTML += `
+
+<p onclick="openStock('${symbol}')">
+
+🔥 ${symbol} - ${s.name}
+
+</p>
+
+`;
+
+}
+
+
+});
+
+
+}
+
+
+
+
+function openStock(symbol){
+
+let s=stocks[symbol];
+
+
+showPage("analysis");
+
+
+document.getElementById("symbol")
+.innerHTML="🔥 "+symbol;
+
+
+document.getElementById("company")
+.innerHTML=s.name;
+
+
+document.getElementById("detailPrice")
+.innerHTML=s.price;
+
+
+
+
+document.getElementById("detailScore")
+.innerHTML=s.score;
+
+
+document.getElementById("momentumScore")
+.innerHTML=s.momentum;
+
+
+document.getElementById("volumeScore")
+.innerHTML=s.volumeScore;
+
+
+document.getElementById("trendScore")
+.innerHTML=s.trend;
+
+
+document.getElementById("newsScore")
+.innerHTML=s.news;
+
+
+document.getElementById("detailSector")
+.innerHTML=s.sector;
+
+
+document.getElementById("detailVolume")
+.innerHTML=s.volume;
+
+
+document.getElementById("detailMarket")
+.innerHTML=s.market;
+
+
+document.getElementById("detailReason")
+.innerHTML=s.reason;
+
+
+
+document.getElementById("updateTime")
+.innerHTML =
+new Date().toLocaleString("tr-TR");
+setTimeout(()=>{
+
+drawChart();
+
+},100);
+
+}
+
+
+// 🔥 DEMO CANLI VERİ MOTORU
+
+async function updateLivePrices(){
+
+for(let symbol of Object.keys(stocks)){
+
+try{
+
+let response = await fetch(
+`https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=5d`
+);
+
+
+let data = await response.json();
+
+
+let result =
+data.chart.result[0];
+
+
+let price =
+result.meta.regularMarketPrice;
+
+
+let oldPrice =
+result.meta.chartPreviousClose;
+
+
+stocks[symbol].price =
+price.toFixed(2)+"$";
+
+
+let change =
+((price-oldPrice)/oldPrice)*100;
+
+
+let sign = change>=0 ? "+" : "";
+
+
+stocks[symbol].change =
+sign + change.toFixed(2)+"%";
+
+
+}
+
+catch(error){
+
+console.log(
+symbol,
+"veri alınamadı"
+);
+
+}
+
+}
+
+
+renderHotList();
+
+renderFavorites();
+
+}
+function liveDataEngine(){
+
+Object.keys(stocks).forEach(symbol=>{
+
+let s = stocks[symbol];
+
+let oldPrice = parseFloat(
+s.price.replace("$","")
+);
+
+
+let move = (Math.random()-0.5) * 2;
+s.lastMove = move;
+
+let newPrice = oldPrice + move;
+
+
+s.price =
+newPrice.toFixed(2)+"$";
+
+
+let percent =
+(move / oldPrice) * 100;
+
+
+let sign = percent >= 0 ? "+" : "";
+
+
+s.change =
+sign + percent.toFixed(2) + "%";
+
+
+
+let scoreMove =
+Math.floor(Math.random()*3)-1;
+
+
+s.score += scoreMove;
+
+
+if(s.score > 100)
+s.score = 100;
+
+
+if(s.score < 0)
+s.score = 0;
+
+
+});
+
+
+
+renderHotList();
+renderFavorites();
+document.querySelectorAll(".stock-card")
+.forEach((card,index)=>{
+
+
+let symbol =
+Object.keys(stocks)[index];
+
+
+let s = stocks[symbol];
+
+
+if(s.lastMove > 0){
+
+card.classList.add("stock-up");
+
+}else{
+
+card.classList.add("stock-down");
+
+}
+
+
+});
+
+let open =
+document.getElementById("analysis");
+
+
+if(!open.classList.contains("hidden")){
+
+
+let current =
+document.getElementById("symbol")
+.innerHTML
+.replace("🔥 ","");
+
+
+let s = stocks[current];
+
+
+if(s){
+
+
+document.getElementById("detailPrice")
+.innerHTML =
+s.price;
+
+
+document.getElementById("detailChange")
+.innerHTML =
+changeStyle(s.change);
+
+
+document.getElementById("detailScore")
+.innerHTML =
+s.score;
+
+
+document.getElementById("momentumScore")
+.innerHTML =
+s.momentum;
+
+
+document.getElementById("volumeScore")
+.innerHTML =
+s.volumeScore;
+
+
+document.getElementById("trendScore")
+.innerHTML =
+s.trend;
+
+
+document.getElementById("newsScore")
+.innerHTML =
+s.news;
+
+
+document.getElementById("updateTime")
+.innerHTML =
+new Date().toLocaleString("tr-TR");
+
+
+}
+
+}
+
+}
+
+
+setInterval(
+liveDataEngine,
+5000
+);
+updateLivePrices();
+
+setInterval(
+updateLivePrices,
+30000
+);
+renderHotList();
+
+renderFavorites();
+
+
+
+function drawChart(){
+
+let canvas = document.getElementById("stockChart");
+
+if(!canvas) return;
+
+
+let ctx = canvas.getContext("2d");
+
+
+canvas.width = 700;
+canvas.height = 300;
+
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+// GRID ÇİZGİLERİ
+
+ctx.strokeStyle="#273244";
+
+ctx.lineWidth=1;
+
+
+for(let y=40; y<canvas.height; y+=50){
+
+ctx.beginPath();
+
+ctx.moveTo(0,y);
+
+ctx.lineTo(canvas.width,y);
+
+ctx.stroke();
+
+}
+
+
+
+let symbol =
+document.getElementById("symbol")
+.innerHTML
+.replace("🔥 ","");
+
+
+let candles = stocks[symbol].chart;
+if(!candles || candles.length === 0){
+
+candles=[];
+
+let price = parseFloat(
+stocks[symbol].price.replace("$","")
+);
+
+let last = price || 100;
+
+
+for(let i=0;i<30;i++){
+
+let open = last;
+
+let close =
+open + (Math.random()-0.5)*10;
+
+let high =
+Math.max(open,close)+5;
+
+let low =
+Math.min(open,close)-5;
+
+
+candles.push({
+
+open,
+close,
+high,
+low
+
+});
+
+
+last=close;
+
+}
+
+
+stocks[symbol].chart=candles;
+
+}
+
+
+
+let x=40;
+
+
+candles.forEach(c=>{
+
+
+let green=c.close>=c.open;
+
+
+ctx.strokeStyle=
+green ? "#32d583" : "#ef4444";
+ctx.shadowBlur=10;
+
+ctx.shadowColor =
+green ? "#32d583" : "#ef4444";
+
+
+ctx.fillStyle=
+green ? "#32d583" : "#ef4444";
+
+
+
+// fitil
+
+ctx.beginPath();
+
+ctx.moveTo(x, c.high);
+
+ctx.lineTo(x, c.low);
+
+ctx.stroke();
+
+
+
+// mum
+
+let scale = 4;
+let top=Math.min(
+c.open,
+c.close
+);
+
+
+let height=Math.abs(
+c.close-c.open
+)*8;
+
+ctx.fillRect(
+x-10,
+top,
+20,
+height
+);
+
+
+
+x+=25;
+
+
+});
+
+}
+window.onload=function(){
+
+
+let sound=new Audio(
+"assets/spark.mp3.mp3"
+);
+
+
+document.getElementById("startBtn")
+.onclick=function(){
+
+
+sound.volume=0.25;
+
+
+sound.play();
+
+
+document.querySelector(".start-screen")
+.style.display="none";
+
+
+document.querySelector(".star-line")
+.style.animation="starLine 1.5s ease forwards";
+
+
+document.querySelector(".main-logo")
+.style.animation="alphaEnter 1.5s ease-out";
+
+
+document.querySelector(".bb-logo")
+.style.animation="bbEnter 1.8s ease-out";
+
+
+
+setTimeout(()=>{
+
+document.getElementById("splash").remove();
+
+},800);
+
+
+
+}
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
